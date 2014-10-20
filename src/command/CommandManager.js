@@ -203,6 +203,17 @@ define(function (require, exports, module) {
         
         return command;
     }
+    
+    function unregister(id) {
+        if (_commands[id]) {
+            var command = _commands[id];
+            delete _commands[id];
+            $(exports).triggerHandler("commandUnregistered", [command]);
+            return command;
+        }
+      
+        return null;
+    }
 
     /**
      * Registers a global internal only command.
@@ -293,6 +304,7 @@ define(function (require, exports, module) {
     // Define public API
     exports.register            = register;
     exports.registerInternal    = registerInternal;
+    exports.unregister          = unregister;
     exports.execute             = execute;
     exports.get                 = get;
     exports.getAll              = getAll;

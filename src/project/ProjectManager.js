@@ -1095,6 +1095,7 @@ define(function (require, exports, module) {
         entry.moveToTrash(function (err) {
             if (!err) {
                 DocumentManager.notifyPathDeleted(entry.fullPath);
+                refreshFileTree();
                 result.resolve();
             } else {
                 _showErrorDialog(ERR_TYPE_DELETE, entry.isDirectory, FileUtils.getFileErrorString(err), entry.fullPath);

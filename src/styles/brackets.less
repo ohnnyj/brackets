@@ -2396,31 +2396,39 @@ li.git-modified > a:before {
 	content: "" !important;
 }
 
-li.git-modified:after {
-	color: orange;
-	content: "m" !important;
-	font-size: 14px !important;
-	position: absolute;
-	top: 4px;
-	right: 8px;
-}
+// li.git-modified:after {
+//   color: orange;
+//   content: "m" !important;
+//   font-size: 14px !important;
+//   position: absolute;
+//   top: 4px;
+//   right: 8px;
+// }
 
 li.git-new > a:before {
 	content: "" !important;
 }
 
-li.git-new:after {
-	color: orange;
-	content: "a" !important;
-	font-size: 16px !important;
-	position: absolute;
-	top: 2px !important;
-	right: 9px;
+// li.git-new:after {
+//   color: orange;
+//   content: "a" !important;
+//   font-size: 16px !important;
+//   position: absolute;
+//   top: 2px !important;
+//   right: 9px;
+// }
+
+.git-new .extension {
+  color: rgb(0, 255, 143) !important;
 }
 
-.main-view #sidebar .git-close-not-modified {
-  top: 6px;
-  right: 8px;
+.git-modified .extension {
+  color: orange !important;
+}
+
+#sidebar .git-close-not-modified.working-set-available {
+  top: 8px;
+  right: 0 !important;
 }
 
 .file-status-icon.dirty,

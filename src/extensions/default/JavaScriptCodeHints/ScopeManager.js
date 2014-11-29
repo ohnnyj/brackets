@@ -53,10 +53,10 @@ define(function (require, exports, module) {
     var HintUtils           = require("HintUtils"),
         MessageIds          = require("MessageIds"),
         Preferences         = require("Preferences");
-    
+
     var ternEnvironment     = [],
         pendingTernRequests = {},
-        builtinFiles        = ["ecma5.json", "browser.json", "jquery.json"],
+        builtinFiles        = ["ecma5.json", "browser.json", "jquery.json"/*, "wtf.json"*/],
         builtinLibraryNames = [],
         isDocumentDirty     = false,
         _hintCount          = 0,

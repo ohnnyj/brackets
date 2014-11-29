@@ -453,6 +453,8 @@ var config = {};
                  * @return {Array<{name: string, type: string, isOptional: boolean}>} where each entry in the array is a parameter.
                  */
                 processInferFnTypeParameters = function (inferType) {
+                    if(!inferType || !inferType.args) { return; }
+                    
                     var params = [],
                         i;
 

@@ -479,7 +479,7 @@ a, img {
     }
     .pane-header {
         box-sizing: border-box;
-        border-bottom:  1px solid rgba(0, 0, 0, 0.05);
+        // border-bottom:  1px solid rgba(0, 0, 0, 0.05);
         padding: 5px 10px;
         background-color: @background;
         white-space: nowrap;
@@ -487,8 +487,8 @@ a, img {
         text-overflow: ellipsis;
         
         .dark & {
-            background-color: #1d1f21; // not using a variable on purpose.
-            border-bottom-color: rgba(255, 255, 255, 0.05);
+            background-color: #555; // not using a variable on purpose.
+            // border-bottom-color: rgba(255, 255, 255, 0.05);
         }
     }
     .active-pane {
@@ -519,17 +519,17 @@ a, img {
 
 // Split View Separator Styles
 .split-vertical #second-pane {
-    border-left: 1px solid rgba(0, 0, 0, 0.17);
-    .dark & {
-        border-left: 1px solid rgba(255, 255, 255, 0.3);
-    }
+    // border-left: 1px solid rgba(0, 0, 0, 0.17);
+    // .dark & {
+    //     border-left: 1px solid rgba(255, 255, 255, 0.3);
+    // }
 }
 
 .split-horizontal #second-pane {
-    border-top: 1px solid rgba(0, 0, 0, 0.17);
-    .dark & {
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-    }
+    // border-top: 1px solid rgba(0, 0, 0, 0.17);
+    // .dark & {
+    //     border-top: 1px solid rgba(255, 255, 255, 0.3);
+    // }
 }
 
 .vert-resizer {
@@ -815,7 +815,7 @@ a, img {
 .open-files-container {
     .box-flex(0);
     padding: 0px;
-    max-height: 200px; // TODO (Issue #276): it would be nicer to have this be 50%, but that doesn't seem to work
+    max-height: 264px; // TODO (Issue #276): it would be nicer to have this be 50%, but that doesn't seem to work
 
 
     ul {
@@ -893,7 +893,8 @@ a, img {
 .filetree-context-extension {
     background: rgba(255, 255, 255, 0.06);
     box-sizing: border-box;
-    height: 23px;
+    display: none !important;
+    height: 26px;
     width: 9px; /* quiet scrollbar width */
     position: fixed;
 
@@ -904,7 +905,7 @@ a, img {
     background: rgba(255, 255, 255, 0.06);
     box-sizing: border-box;
     position: absolute;
-    height: 23px;
+    height: 26px;
 }
 
 //Initially start with the open files hidden, they will get show as files are added
@@ -2393,7 +2394,7 @@ input {
 
 .open-files-container ul {
   font-family: 'SourceCodePro-Light', sans-serif !important;
-  padding-bottom: 8px;
+  padding-bottom: 0 !important;
 }
 
 #open-files-container .file-icon,
@@ -2456,6 +2457,10 @@ li.git-new > a:before {
   right: 0 !important;
 }
 
+.git-close-not-modified {
+  display: none !important;
+}
+
 .file-status-icon.dirty,
 .file-status-icon.can-close {
 	margin-top: 1px;
@@ -2497,8 +2502,51 @@ li.git-new > a:before {
 
 .ohnnyj-generate-tabs(9);
 
+.open-files-container ul li {
+  &:nth-child(10):before {
+    .ohnnyj-tab(0);
+  }
+}
+
 .filetree-selection-extension {
     display: none !important;
+}
+
+#working-set-list-container {
+  padding-top: 3px !important;
+}
+
+#working-set-list-container .scroller-shadow {
+    display: none !important;
+}
+
+.working-set-header {
+    height: 2px;
+    visibility: hidden;
+    display: none !important;
+}
+
+.CodeMirror-code {
+  // margin-right: 21px;
+}
+
+.CodeMirror-lines {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.CodeMirror-ruler {
+  z-index: 10 !important;
+}
+
+.CodeMirror-scroll {
+  // margin-right: -14px;
+  margin-right: -46px;
+}
+
+.CodeMirror-sizer {
+  // border-right-width: 0 !important;
+//  margin-left: 100px !important;
 }
 
 .not-editor,
@@ -2528,6 +2576,7 @@ body,
 .working-set-header > div,
 .working-set-header > span,
 #project-files-header .btn-alt-quiet,
+#working-set-list-container,
 .image-view,
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-corner {

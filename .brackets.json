@@ -11,7 +11,8 @@
     "path": {
         "src/thirdparty/CodeMirror2/**/*.js": {
             "spaceUnits": 2,
-            "linting.enabled": false
+            "linting.enabled": false,
+            "brackets-git.gitPath": "/usr/bin/git"
         },
         "src/thirdparty/globmatch.js": {
             "spaceUnits": 2,
